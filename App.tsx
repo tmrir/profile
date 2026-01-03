@@ -258,11 +258,11 @@ const App: React.FC = () => {
       )}
 
       {/* الحاوية المركزية - متجاوبة مع الحفاظ على نسبة A4 */}
-      <div ref={profileRef} className="w-[794px] mx-auto bg-white shadow-2xl overflow-hidden print:overflow-visible print:w-full print:shadow-none">
+      <div ref={profileRef} className="w-full max-w-[794px] mx-auto bg-white shadow-2xl overflow-hidden print:overflow-visible print:w-full print:shadow-none">
         {/* تم تثبيت العرض لـ 794px ليتناسب تماماً مع A4 PDF */}
 
         {/* الصفحة 1: الغلاف - النمط الكامل */}
-        <section className="page-section bg-[#0F2133] text-white flex flex-col items-center justify-center text-center px-4 py-8 h-[1122px] max-h-[1122px] overflow-hidden relative">
+        <section className="page-section bg-[#0F2133] text-white flex flex-col items-center justify-center text-center px-4 py-8 min-h-screen lg:h-[1122px] lg:max-h-[1122px] h-auto overflow-hidden relative">
           <div className="glowing-circle w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] bg-cyan-500/5 -top-20 md:-top-40 -right-20 md:-right-40"></div>
           <div className="z-10 w-full max-w-3xl">
             <ImageEditable readOnly={isViewMode} value={data.hero.logo} onSave={(v) => updateData(['hero', 'logo'], v)} className="w-24 h-24 md:w-40 md:h-40 lg:w-48 lg:h-48 mx-auto mb-8 md:mb-12 lg:mb-16 rounded-2xl md:rounded-[3rem] border-2 md:border-4 border-white/10 shadow-2xl" />
@@ -282,7 +282,7 @@ const App: React.FC = () => {
         </section>
 
         {/* الصفحة 2: من نحن - تصميم عصري فاخر وشبابي */}
-        <section className="page-section relative bg-white overflow-hidden flex flex-col justify-center h-[1122px] max-h-[1122px]">
+        <section className="page-section relative bg-white overflow-hidden flex flex-col justify-center min-h-screen lg:h-[1122px] lg:max-h-[1122px] h-auto">
 
           {/* خلفية ديناميكية */}
           <div className="absolute inset-0">
@@ -417,7 +417,7 @@ const App: React.FC = () => {
         </section>
 
         {/* الصفحة 3: كلمة الرئيس التنفيذي - تصميم فاخر ورسمي */}
-        <section className="page-section relative bg-white overflow-hidden flex flex-col justify-center h-[1122px] max-h-[1122px]">
+        <section className="page-section relative bg-white overflow-hidden flex flex-col justify-center min-h-screen lg:h-[1122px] lg:max-h-[1122px] h-auto">
           {/* خلفية مائية شعار */}
           <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
             <div className="w-[800px] h-[800px] bg-cyan-900 rounded-full blur-3xl"></div>
@@ -459,7 +459,7 @@ const App: React.FC = () => {
         </section>
 
         {/* الصفحة 4: الرؤية والرسالة - تصميم عصري ومنقسم */}
-        <section className="page-section flex-col lg:flex-row h-[1122px] max-h-[1122px] overflow-hidden bg-white">
+        <section className="page-section flex-col lg:flex-row min-h-screen lg:h-[1122px] lg:max-h-[1122px] h-auto overflow-hidden bg-white">
           <div className="w-full lg:w-1/2 p-10 md:p-16 flex flex-col justify-center relative">
             {/* زخرفة خلفية بسيطة */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -505,7 +505,7 @@ const App: React.FC = () => {
         </section>
 
         {/* الصفحة 5: القيم المؤسسية - تصميم عصري وجذاب */}
-        <section className="page-section bg-[#F5F7FA] relative overflow-hidden flex flex-col justify-center h-[1122px] max-h-[1122px]">
+        <section className="page-section bg-[#F5F7FA] relative overflow-hidden flex flex-col justify-center min-h-screen lg:h-[1122px] lg:max-h-[1122px] h-auto">
           {/* خلفية زخرفية */}
           <div className="absolute top-0 right-0 w-full h-1/3 bg-[#0F2133] skew-y-6 origin-top-left translate-y-[-50%]"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl"></div>
@@ -576,7 +576,7 @@ const App: React.FC = () => {
         </section>
 
         {/* الصفحة 6: الخدمات - رحلة الأثر المتصلة (Zeigarnik Style) */}
-        <section className="page-section bg-gradient-to-b from-slate-50 via-white to-cyan-50/20 relative p-6 md:p-8 overflow-hidden flex flex-col h-[1122px] max-h-[1122px]">
+        <section className="page-section bg-gradient-to-b from-slate-50 via-white to-cyan-50/20 relative p-6 md:p-8 overflow-hidden flex flex-col min-h-screen lg:h-[1122px] lg:max-h-[1122px] h-auto">
           {/* خلفية جمالية هادئة */}
           <div className="absolute inset-0">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-100/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -715,7 +715,7 @@ const App: React.FC = () => {
 
         {/* الصفحة 7: آلية التنفيذ والعمل - تصميم مسار مهني */}
         <section
-          className="page-section bg-white relative isolate z-0 p-8 md:p-12 overflow-hidden flex flex-col h-[1122px] max-h-[1122px]"
+          className="page-section bg-white relative isolate z-0 p-8 md:p-12 overflow-hidden flex flex-col min-h-screen lg:h-[1122px] lg:max-h-[1122px] h-auto"
           style={{ pageBreakAfter: 'always', breakAfter: 'page' }}
         >
           {/* خلفية هندسية ناعمة */}
@@ -806,7 +806,7 @@ const App: React.FC = () => {
 
         {/* الصفحة 8: التواصل - تصميم فاخر احترافي مودرن */}
         <section
-          className="page-section bg-gradient-to-br from-[#0A1628] via-[#0F2133] to-[#1a2942] relative isolate z-0 flex items-center justify-center p-4 md:p-6 lg:p-10 overflow-hidden h-[1122px] max-h-[1122px]"
+          className="page-section bg-gradient-to-br from-[#0A1628] via-[#0F2133] to-[#1a2942] relative isolate z-0 flex items-center justify-center p-4 md:p-6 lg:p-10 overflow-hidden min-h-screen lg:h-[1122px] lg:max-h-[1122px] h-auto"
           style={{ pageBreakBefore: 'always', breakBefore: 'page' }}
         >
           {/* طبقة تأثيرات الخلفية المتقدمة */}
